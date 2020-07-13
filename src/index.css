@@ -11,3 +11,203 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.layout{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+}
+
+.blog-header {
+  line-height: 50px;
+  background: #001529;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.blog-header .blog-logo a{
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.blog-content {
+  min-height: calc(100vh - 160px);
+  padding-top: 50px;
+}
+
+.article-content {
+  margin-top: 2.5rem;
+  padding: 18px;
+  border-radius: 4px;
+  background: #f7f7f7;
+}
+
+.article-content .article-title a{
+  font-size: 1.75rem;
+  font-weight: bold;
+  background: linear-gradient(90deg,#ff8a00,#e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-shadow: none;
+}
+
+.blog-footer {
+  text-align: center;
+  line-height: 50px;
+  color: rgba(0,0,0,.65);
+}
+
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.checkbox {
+	
+}
+
+.custom-checkbox {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	line-height: 20px;
+}
+
+.custom-checkbox-button {
+	display: block;
+	margin: 0 25px;
+	width: 35px;
+	border-radius: 12px;
+	background: rgb(118, 118, 118);
+	height: 20px;
+	position: relative;
+	bottom: -4px;
+	cursor: pointer;
+}
+
+.custom-checkbox-button:before {
+  position: absolute;
+	top: 0px;
+	left: -1px;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+
+.custom-checkbox.checked .custom-checkbox-button:before {
+  left: 16px;
+  content: "🌑";
+}
+
+.custom-checkbox .custom-checkbox-button:before {
+  content: "🌞";
+}
+
+.custom-checkbox .custom-checkbox-button {
+  background-color: yellow;
+}
+
+.custom-checkbox.checked .custom-checkbox-button {
+  background: linear-gradient(90deg,#ff8a00,#e52e71);
+}
+
+/* Dark theme */
+.app.dark {
+  background: #282c35;
+}
+
+.app.dark .blog-header {
+  background: #282c35;
+}
+
+.app.dark .article-content{
+  background: #282c35;
+  color: #fff;
+}
+
+.app.dark .blog-footer{
+  color: #fff;
+}
+
+/* loader */
+
+.loader {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.loader span{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: linear-gradient(90deg,#ff8a00,#e52e71);
+  margin: 35px 5px;
+}
+
+.loader span:nth-child(1){
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.loader span:nth-child(2){
+  animation: bounce 1s ease-in-out 0.33s infinite;
+}
+
+.loader span:nth-child(3){
+  animation: bounce 1s ease-in-out 0.66s infinite;
+}
+
+@keyframes bounce{
+  0%, 75%, 100%{
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  25%{
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+/* like */
+
+.like {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-right: 6px;
+}
+
+.like span {
+  font-size: 14px;
+  color: #60666b;
+  font-weight: 800;
+  position: relative;
+  bottom: 1px;
+}
+
+.like:before {
+  content: "♥";
+  font-size: 19px;
+  margin-right: 16px;
+  cursor: pointer;
+  color: #8f969c;
+}
+
+.plus.like:before{
+  color: red;
+}
