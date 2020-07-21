@@ -1,12 +1,16 @@
 import React from 'react'
 import Checkbox from '../common/Checkbox'
 
-function Header({check, changeTheme}) {
+function Header({check, changeType, changeTheme}) {
   return (
     <header className="blog-header">
       <div className="layout layout-header" >
         <div className="blog-logo">
           <a href="/">IT Блог</a>
+        </div>
+        <div className="tabs">
+          <button onClick={() => changeType('posts')}>Посты</button>
+          <button onClick={() => changeType('users')}>Пользователи</button>
         </div>
         <Checkbox 
             checked={check} 
