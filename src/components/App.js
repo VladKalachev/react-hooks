@@ -1,14 +1,15 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect, useRef, useContext} from 'react'
 import Header from './Header'
 import PostList from './PostList'
 import Footer from './Footer'
+import ThemeContext from '../context'
 
 function App() {
   const ref = useRef(null)
   const [posts, setPost] = useState([])
-  const [theme, setTheme] = useState('light')
   const [check, setCheck] = useState(false)
   const [type, setType] = useState('posts')
+  const {theme, setTheme} = useContext(ThemeContext)
   
   useEffect(() => {
     setTimeout(() => {
@@ -48,4 +49,4 @@ function App() {
   
 }
 
-export default App
+export default React.memo(App, () => true)
