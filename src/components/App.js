@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useContext, useReducer} from 'react'
+import React, {useEffect, useRef, useContext, useReducer, useCallback} from 'react'
 import Header from './Header'
 import PostList from './PostList'
 import Footer from './Footer'
@@ -69,9 +69,10 @@ function App() {
   const handleFocus = () => {
     ref.current.style.color = 'red'
   }
-  const setType = (type) => {
+  const setType = useCallback((type) => {
+    console.log('Memoized');
     dispatch({ type })
-  }
+  }, [data.type])
 
   return (
     <div className={`app ${theme}`}>

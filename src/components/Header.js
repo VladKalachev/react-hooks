@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Checkbox from '../common/Checkbox'
 
 function Header({check, changeType, changeTheme}) {
+  useEffect(() => {
+    console.log('update');
+  }, [changeType])
+
   return (
     <header className="blog-header">
       <div className="layout layout-header" >
